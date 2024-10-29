@@ -7,19 +7,21 @@ const project = new cdk.JsiiProject({
   description:
     "A projen template for AWS CDK TypeScript app. with ES Modules and TSX.",
   jest: false,
-  jsiiVersion: "~5.0.0",
+  jsiiVersion: "~5.5.0",
   license: "MIT",
   licensed: true,
-  minNodeVersion: "18.18.0",
+  minNodeVersion: "22.11.0",
   name: "projen-aws-cdk-app",
   npmAccess: javascript.NpmAccess.PUBLIC,
-  packageManager: javascript.NodePackageManager.YARN_CLASSIC,
+  packageManager: javascript.NodePackageManager.PNPM,
   packageName: "@nikovirtala/projen-aws-cdk-app",
   peerDeps: ["projen", "constructs"],
+  pnpmVersion: "9",
   prettier: true,
   projenrcTs: true,
   releaseToNpm: true,
   repositoryUrl: "https://github.com/nikovirtala/projen-aws-cdk-app.git",
+  typescriptVersion: "5.5.4",
 });
 
 project.synth();

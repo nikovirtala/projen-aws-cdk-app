@@ -1,9 +1,8 @@
+import * as path from "path";
 import { awscdk, javascript } from "projen";
 
-export interface AwsCdkAppOptions extends awscdk.AwsCdkTypeScriptAppOptions {}
-
 export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
-  constructor(options: AwsCdkAppOptions) {
+  constructor(options: awscdk.AwsCdkTypeScriptAppOptions) {
     super({
       ...options,
       cdkVersion: options.cdkVersion ?? "2.115.0",
@@ -57,13 +56,18 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
     this.addDevDeps("tsx");
     this.defaultTask?.reset();
     this.defaultTask?.exec(
-      `tsx --tsconfig ${this.tsconfigDev?.file.path} .projenrc.ts,
-      )}`,
+      `tsx --tsconfig ${this.tsconfigDev?.file.path} .projenrc.ts`,
     );
 
     this.cdkConfig.json.addOverride(
       "app",
-      `tsx --tsconfig ${this.tsconfig?.file.path} ${this.srcdir}/${this.appEntrypoint}`,
+      `tsx --tsconfig ${this.tsconfig?.file.path} ${path.posix.join(this.srcdir, this.appEntrypoint)}`,
+    );
+
+    // lint code with modern ecma version
+    this.tryFindObjectFile(".eslintrc.json")?.addOverride(
+      "parserOptions.ecmaVersion",
+      "latest",
     );
 
     this.eslint?.addRules({
