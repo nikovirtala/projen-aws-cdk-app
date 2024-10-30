@@ -55,9 +55,7 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
     this.deps.removeDependency("ts-node");
     this.addDevDeps("tsx");
     this.defaultTask?.reset();
-    this.defaultTask?.exec(
-      `tsx --tsconfig ${this.tsconfigDev?.file.path} .projenrc.ts`,
-    );
+    this.defaultTask?.exec(`tsx --tsconfig ${this.tsconfigDev?.file.path} .projenrc.ts`);
 
     this.cdkConfig.json.addOverride(
       "app",
@@ -65,10 +63,7 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
     );
 
     // lint code with modern ecma version
-    this.tryFindObjectFile(".eslintrc.json")?.addOverride(
-      "parserOptions.ecmaVersion",
-      "latest",
-    );
+    this.tryFindObjectFile(".eslintrc.json")?.addOverride("parserOptions.ecmaVersion", "latest");
 
     this.eslint?.addRules({
       "@typescript-eslint/await-thenable": "error",
