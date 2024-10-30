@@ -3,21 +3,33 @@ import { awscdk, javascript } from "projen";
 
 export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
   constructor(options: awscdk.AwsCdkTypeScriptAppOptions) {
+    const {
+      cdkVersion,
+      cdkVersionPinning,
+      defaultReleaseBranch,
+      minNodeVersion,
+      prettier,
+      prettierOptions,
+      sampleCode,
+      tsconfig,
+      typescriptVersion,
+      ...awsCdkTypeScriptAppOptions
+    } = options;
+
     super({
-      ...options,
-      cdkVersion: options.cdkVersion ?? "2.164.1",
-      cdkVersionPinning: options.cdkVersionPinning ?? true,
-      defaultReleaseBranch: options.defaultReleaseBranch ?? "main",
-      minNodeVersion: options.minNodeVersion ?? "22.11.0",
-      prettier: options.prettier ?? true,
-      prettierOptions: options.prettierOptions ?? {
+      cdkVersion: cdkVersion ?? "2.164.1",
+      cdkVersionPinning: cdkVersionPinning ?? true,
+      defaultReleaseBranch: defaultReleaseBranch ?? "main",
+      minNodeVersion: minNodeVersion ?? "22.11.0",
+      prettier: prettier ?? true,
+      prettierOptions: prettierOptions ?? {
         settings: {
           printWidth: 120,
         },
       },
       projenrcTs: true,
-      sampleCode: options.sampleCode ?? false,
-      tsconfig: options.tsconfig ?? {
+      sampleCode: sampleCode ?? false,
+      tsconfig: tsconfig ?? {
         compilerOptions: {
           allowSyntheticDefaultImports: true,
           alwaysStrict: true,
@@ -46,7 +58,8 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
           target: "esnext",
         },
       },
-      typescriptVersion: options.typescriptVersion ?? "5.5.4",
+      typescriptVersion: typescriptVersion ?? "5.5.4",
+      ...awsCdkTypeScriptAppOptions,
     });
 
     // switch commonjs to es modules
