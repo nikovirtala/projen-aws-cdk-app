@@ -5,10 +5,10 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
   constructor(options: awscdk.AwsCdkTypeScriptAppOptions) {
     super({
       ...options,
-      cdkVersion: options.cdkVersion ?? "2.115.0",
+      cdkVersion: options.cdkVersion ?? "2.164.1",
       cdkVersionPinning: options.cdkVersionPinning ?? true,
       defaultReleaseBranch: options.defaultReleaseBranch ?? "main",
-      minNodeVersion: options.minNodeVersion ?? "18.18.0",
+      minNodeVersion: options.minNodeVersion ?? "22.11.0",
       prettier: options.prettier ?? true,
       prettierOptions: options.prettierOptions ?? {
         settings: {
@@ -46,6 +46,7 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
           target: "esnext",
         },
       },
+      typescriptVersion: options.typescriptVersion ?? "5.5.4",
     });
 
     // switch commonjs to es modules
