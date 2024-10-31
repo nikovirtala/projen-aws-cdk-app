@@ -17,7 +17,7 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
     } = options;
 
     super({
-      cdkVersion: cdkVersion ?? "2.164.1",
+      cdkVersion: !cdkVersion || cdkVersion === "2.1.0" ? "2.164.1" : cdkVersion,
       cdkVersionPinning: cdkVersionPinning ?? true,
       defaultReleaseBranch: defaultReleaseBranch ?? "main",
       minNodeVersion: minNodeVersion ?? "22.11.0",
@@ -28,7 +28,7 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
         },
       },
       projenrcTs: true,
-      sampleCode: sampleCode ?? false,
+      sampleCode: sampleCode ?? true,
       tsconfig: tsconfig ?? {
         compilerOptions: {
           allowSyntheticDefaultImports: true,
