@@ -31,6 +31,7 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
       sampleCode: sampleCode ?? true,
       tsconfig: tsconfig ?? {
         compilerOptions: {
+          allowImportingTsExtensions: true,
           allowSyntheticDefaultImports: true,
           alwaysStrict: true,
           declaration: true,
