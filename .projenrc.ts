@@ -6,6 +6,16 @@ const project = new cdk.JsiiProject({
   defaultReleaseBranch: "main",
   deps: ["projen"],
   description: "A projen template for AWS CDK TypeScript app. with ES Modules and TSX.",
+  dependabot: false,
+  depsUpgradeOptions: {
+    workflowOptions: {
+      labels: ["auto-approve", "auto-merge"],
+    },
+  },
+  autoApproveOptions: {
+    secret: "GITHUB_TOKEN",
+    allowedUsernames: ["nikovirtala"],
+  },
   jest: false,
   jsiiVersion: "~5.5.0",
   license: "MIT",
