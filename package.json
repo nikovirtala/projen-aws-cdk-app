@@ -50,16 +50,16 @@
     "jsii-pacmak": "^1.104.0",
     "jsii-rosetta": "~5.5.0",
     "prettier": "^3.3.3",
-    "projen": "^0.88.9",
+    "projen": "^0.90.0",
     "ts-node": "^10.9.2",
     "typescript": "5.5.4"
   },
   "peerDependencies": {
     "constructs": "^10.4.2",
-    "projen": "^0.88.9"
+    "projen": "^0.90.0"
   },
   "dependencies": {
-    "projen": "^0.88.9"
+    "projen": "^0.90.0"
   },
   "pnpm": {},
   "engines": {
