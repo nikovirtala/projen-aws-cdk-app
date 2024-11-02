@@ -16,6 +16,7 @@ const project = new cdk.JsiiProject({
     secret: "GITHUB_TOKEN",
     allowedUsernames: ["nikovirtala"],
   },
+  mergify: true,
   jest: false,
   jsiiVersion: "~5.5.0",
   license: "MIT",
