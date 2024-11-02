@@ -17,6 +17,7 @@ const project = new cdk.JsiiProject({
     allowedUsernames: ["nikovirtala"],
   },
   mergify: true,
+  autoMerge: true,
   jest: false,
   jsiiVersion: "~5.5.0",
   license: "MIT",
