@@ -59,7 +59,7 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
           target: "esnext",
         },
       },
-      typescriptVersion: typescriptVersion ?? "5.5.4",
+      typescriptVersion: typescriptVersion ?? "5.6.3",
       ...awsCdkTypeScriptAppOptions,
     });
 
