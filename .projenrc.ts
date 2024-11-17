@@ -40,7 +40,7 @@ const project = new cdk.JsiiProject({
   projenrcTs: true,
   releaseToNpm: true,
   repositoryUrl: "https://github.com/nikovirtala/projen-aws-cdk-app.git",
-  typescriptVersion: "5.5.4",
+  typescriptVersion: "5.6.3",
 });
 
 project.synth();
