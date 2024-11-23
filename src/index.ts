@@ -58,6 +58,8 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
       prettierOptions: prettierOptions ?? {
         settings: {
           printWidth: 120,
+          tabWidth: 4,
+          trailingComma: javascript.TrailingComma.ALL,
         },
       },
       projenrcTs: true,
@@ -91,6 +93,17 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
 
     this.eslint?.addRules({
       "@typescript-eslint/await-thenable": "error",
+    });
+
+    this.vscode?.extensions.addRecommendations("dbaeumer.vscode-eslint", "esbenp.prettier-vscode");
+
+    this.vscode?.settings.addSettings({
+      "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+      },
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 4,
     });
   }
 }
