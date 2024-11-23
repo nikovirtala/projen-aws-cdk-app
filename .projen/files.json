@@ -16,6 +16,8 @@
     ".projen/deps.json",
     ".projen/files.json",
     ".projen/tasks.json",
+    ".vscode/extensions.json",
+    ".vscode/settings.json",
     "LICENSE",
     "tsconfig.dev.json"
   ],
