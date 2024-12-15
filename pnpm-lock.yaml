@@ -1904,8 +1904,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@5.8.0-dev.20241213:
-    resolution: {integrity: sha512-xhZIH3ZacWq2yulnfGWjDWkfWhG66cdOQUnn6EoJpd3SpP6+PCP3bWqH/wHD26RlHrHBdQLBoT4pHFMyIoyCnA==}
+  typescript@5.8.0-dev.20241214:
+    resolution: {integrity: sha512-LAoyzKAf6KZbnrIf167r6p5DxwJGIhB+G23Y64pmxMTbOH1gfPJT23ZTyU1hmQwc43pCXGYLNjoYGZYjYyQJxw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -2695,7 +2695,7 @@ snapshots:
     dependencies:
       semver: 7.6.3
       shelljs: 0.8.5
-      typescript: 5.8.0-dev.20241213
+      typescript: 5.8.0-dev.20241214
 
   emoji-regex@8.0.0: {}
 
@@ -4095,7 +4095,7 @@ snapshots:
 
   typescript@5.7.2: {}
 
-  typescript@5.8.0-dev.20241213: {}
+  typescript@5.8.0-dev.20241214: {}
 
   uglify-js@3.19.3:
     optional: true
