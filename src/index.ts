@@ -1,5 +1,5 @@
 import * as path from "path";
-import { awscdk, javascript } from "projen";
+import { awscdk, javascript, TextFile } from "projen";
 
 export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
     constructor(options: awscdk.AwsCdkTypeScriptAppOptions) {
@@ -48,12 +48,14 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
             },
         };
 
+        const nodeVersion = minNodeVersion ?? "22.12.0";
+
         super({
             cdkVersion: !cdkVersion || cdkVersion === "2.1.0" ? "2.173.3" : cdkVersion, // this does not work!
             cdkVersionPinning: cdkVersionPinning ?? true,
             defaultReleaseBranch: defaultReleaseBranch ?? "main",
             jest: jest ?? false,
-            minNodeVersion: minNodeVersion ?? "22.12.0",
+            minNodeVersion: nodeVersion,
             prettier: prettier ?? true,
             prettierOptions: prettierOptions ?? {
                 settings: {
@@ -104,6 +106,12 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
             "editor.defaultFormatter": "esbenp.prettier-vscode",
             "editor.formatOnSave": true,
             "editor.tabSize": 4,
+        });
+
+        new TextFile(this, ".nvmrc", {
+            committed: true,
+            readonly: true,
+            lines: ["v" + nodeVersion],
         });
     }
 }
