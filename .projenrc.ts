@@ -22,7 +22,7 @@ const project = new cdk.JsiiProject({
     jsiiVersion: "~5.5.0",
     license: "MIT",
     licensed: true,
-    minNodeVersion: "22.11.0",
+    minNodeVersion: "22.12.0",
     name: "projen-aws-cdk-app",
     npmAccess: javascript.NpmAccess.PUBLIC,
     packageManager: javascript.NodePackageManager.PNPM,
