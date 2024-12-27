@@ -1,4 +1,6 @@
-import { cdk, javascript } from "projen";
+import { cdk, javascript, TextFile } from "projen";
+
+const nodeVersion = "22.12.0";
 
 const project = new cdk.JsiiProject({
     author: "Niko Virtala",
@@ -22,7 +24,7 @@ const project = new cdk.JsiiProject({
     jsiiVersion: "~5.5.0",
     license: "MIT",
     licensed: true,
-    minNodeVersion: "22.12.0",
+    minNodeVersion: nodeVersion,
     name: "projen-aws-cdk-app",
     npmAccess: javascript.NpmAccess.PUBLIC,
     packageManager: javascript.NodePackageManager.PNPM,
@@ -52,6 +54,12 @@ project.vscode?.settings.addSettings({
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.tabSize": 4,
+});
+
+new TextFile(project, ".nvmrc", {
+    committed: true,
+    readonly: true,
+    lines: ["v" + nodeVersion],
 });
 
 project.synth();
