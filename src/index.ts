@@ -53,7 +53,7 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
             cdkVersionPinning: cdkVersionPinning ?? true,
             defaultReleaseBranch: defaultReleaseBranch ?? "main",
             jest: jest ?? false,
-            minNodeVersion: minNodeVersion ?? "22.11.0",
+            minNodeVersion: minNodeVersion ?? "22.12.0",
             prettier: prettier ?? true,
             prettierOptions: prettierOptions ?? {
                 settings: {
