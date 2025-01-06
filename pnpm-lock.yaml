@@ -50,7 +50,7 @@ importers:
         version: 1.106.0
       jsii-docgen:
         specifier: ^10.5.0
-        version: 10.6.1(jsii-rosetta@5.5.20)
+        version: 10.6.2(jsii-rosetta@5.5.20)
       jsii-pacmak:
         specifier: ^1.106.0
         version: 1.106.0(jsii-rosetta@5.5.20)
@@ -1202,8 +1202,8 @@ packages:
     engines: {node: '>= 14.17.0'}
     hasBin: true
 
-  jsii-docgen@10.6.1:
-    resolution: {integrity: sha512-YzuFpdKnETdkljGXv7mn9DCRK6JIK09XrwJ9UDhdJEy3DpRUGn7uD5RH8vm2rIsQrad9L8pKV4xfSii5Pzoy9g==}
+  jsii-docgen@10.6.2:
+    resolution: {integrity: sha512-FVXgJJ1xcX92yDgoZeWaV9ibrAlh1Q1A0xHZNtyEoJOlzzLmdM3Nv8Ul4uA0hIfmS+Y7nfB4STy9lM+NbnCuUQ==}
     hasBin: true
     peerDependencies:
       jsii-rosetta: ^1.85.0 || ~5.0.14 || ~5.1.2 || ~5.2.0 || ~5.3.0 || ~5.4.0 || ~5.5.0 || ~5.6.0 || ~5.7.0
@@ -1904,8 +1904,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@5.8.0-dev.20250104:
-    resolution: {integrity: sha512-xFBxTr8+Eew7d2yBN+I9Y51oceO90SKonhzcz+WQoDEIFJ5VPZm/Hb4bGgmUAcKqx/6YwyJC/5kxWfEI5hVmBA==}
+  typescript@5.8.0-dev.20250105:
+    resolution: {integrity: sha512-5nDHeYu+pnkST/+GkBSldbIqBj64WEOHi86JklwbsSuKHcU3Hhtocho6+kXzTiYYEj+9RhIMpaZnktcHkjdfDQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -2695,7 +2695,7 @@ snapshots:
     dependencies:
       semver: 7.6.3
       shelljs: 0.8.5
-      typescript: 5.8.0-dev.20250104
+      typescript: 5.8.0-dev.20250105
 
   emoji-regex@8.0.0: {}
 
@@ -3346,7 +3346,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  jsii-docgen@10.6.1(jsii-rosetta@5.5.20):
+  jsii-docgen@10.6.2(jsii-rosetta@5.5.20):
     dependencies:
       '@jsii/spec': 1.106.0
       case: 1.6.3
@@ -4095,7 +4095,7 @@ snapshots:
 
   typescript@5.7.2: {}
 
-  typescript@5.8.0-dev.20250104: {}
+  typescript@5.8.0-dev.20250105: {}
 
   uglify-js@3.19.3:
     optional: true
