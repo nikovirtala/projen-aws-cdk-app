@@ -6,3 +6,4 @@ This template is mostly like the projen's standard [`AwsCdkTypeScriptApp`](https
 
 - The code is executed using [`tsx`](https://github.com/privatenumber/tsx) instead of the default `ts-node`
 - ES Modules (ECMAScript modules) (ESM) are used instead of the default CommonJS
+- Jest is replaced with [Vitest](https://github.com/nikovirtala/projen-vitest)
