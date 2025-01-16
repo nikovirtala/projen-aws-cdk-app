@@ -1,19 +1,24 @@
 import * as path from "path";
+import { Vitest } from "@nikovirtala/projen-vitest";
 import { awscdk, javascript, TextFile } from "projen";
+import { AwsCdkAppOptions } from "./AwsCdkAppOptions";
+
+export { AwsCdkAppOptions } from "./AwsCdkAppOptions";
 
 export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
-    constructor(options: awscdk.AwsCdkTypeScriptAppOptions) {
+    constructor(options: AwsCdkAppOptions) {
         const {
             cdkVersion,
             cdkVersionPinning,
             defaultReleaseBranch,
-            jest,
             minNodeVersion,
             prettier,
             prettierOptions,
             sampleCode,
             tsconfig,
             typescriptVersion,
+            vitest,
+            vitestOptions,
             ...awsCdkTypeScriptAppOptions
         } = options;
 
@@ -54,7 +59,7 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
             cdkVersion: !cdkVersion || cdkVersion === "2.1.0" ? "2.173.3" : cdkVersion, // this does not work!
             cdkVersionPinning: cdkVersionPinning ?? true,
             defaultReleaseBranch: defaultReleaseBranch ?? "main",
-            jest: jest ?? false,
+            jest: false,
             minNodeVersion: nodeVersion,
             prettier: prettier ?? true,
             prettierOptions: prettierOptions ?? {
@@ -113,5 +118,10 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
             readonly: true,
             lines: ["v" + nodeVersion],
         });
+
+        if (vitest ?? true) {
+            this.addDevDeps("@nikovirtala/projen-vitest");
+            new Vitest(this, vitestOptions);
+        }
     }
 }

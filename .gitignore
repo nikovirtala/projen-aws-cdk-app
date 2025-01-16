@@ -54,3 +54,4 @@ tsconfig.json
 !/.vscode/settings.json
 !/.nvmrc
 !/.projenrc.ts
+!/src/AwsCdkAppOptions.ts

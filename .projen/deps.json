@@ -1,6 +1,14 @@
 {
   "dependencies": [
     {
+      "name": "@jsii/spec",
+      "type": "build"
+    },
+    {
+      "name": "@mrgrain/jsii-struct-builder",
+      "type": "build"
+    },
+    {
       "name": "@types/node",
       "version": "^22",
       "type": "build"
@@ -85,6 +93,14 @@
       "name": "typescript",
       "version": "5.7.2",
       "type": "build"
+    },
+    {
+      "name": "@nikovirtala/projen-vitest",
+      "type": "peer"
+    },
+    {
+      "name": "aws-cdk-lib",
+      "type": "peer"
     },
     {
       "name": "constructs",

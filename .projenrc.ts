@@ -1,3 +1,5 @@
+import { PrimitiveType } from "@jsii/spec";
+import { ProjenStruct, Struct } from "@mrgrain/jsii-struct-builder";
 import { cdk, javascript, TextFile } from "projen";
 
 const nodeVersion = "22.12.0";
@@ -14,6 +16,7 @@ const project = new cdk.JsiiProject({
             labels: ["auto-approve", "auto-merge"],
         },
     },
+    devDeps: ["@mrgrain/jsii-struct-builder", "@jsii/spec"],
     autoApproveOptions: {
         secret: "GITHUB_TOKEN",
         allowedUsernames: ["nikovirtala"],
@@ -29,7 +32,7 @@ const project = new cdk.JsiiProject({
     npmAccess: javascript.NpmAccess.PUBLIC,
     packageManager: javascript.NodePackageManager.PNPM,
     packageName: "@nikovirtala/projen-aws-cdk-app",
-    peerDeps: ["projen", "constructs"],
+    peerDeps: ["aws-cdk-lib", "@nikovirtala/projen-vitest", "constructs", "projen"],
     pnpmVersion: "9",
     prettier: true,
     prettierOptions: {
@@ -44,6 +47,32 @@ const project = new cdk.JsiiProject({
     repositoryUrl: "https://github.com/nikovirtala/projen-aws-cdk-app.git",
     typescriptVersion: "5.7.2",
 });
+
+// TypeScript utility types are **not** allowed in `jsii` applications :´(
+new ProjenStruct(project, { name: "AwsCdkAppOptions", outputFileOptions: { readonly: false } })
+    .mixin(Struct.fromFqn("projen.awscdk.AwsCdkTypeScriptAppOptions"))
+    .withoutDeprecated()
+    .omit("jest")
+    .omit("jestOptions")
+    .omit("tsJestOptions")
+    .add(
+        {
+            name: "vitest",
+            type: { primitive: PrimitiveType.Boolean },
+            docs: {
+                summary: "Enable testing with Vitest.",
+                default: "true",
+            },
+        },
+        {
+            name: "vitestOptions",
+            type: { fqn: "@nikovirtala/projen-vitest.VitestOptions" },
+            docs: {
+                summary: "The Vitest configuration (when enabled).",
+                default: "- `@nikovirtala/projen-vitest` defaults",
+            },
+        },
+    );
 
 project.vscode?.extensions.addRecommendations("dbaeumer.vscode-eslint", "esbenp.prettier-vscode");
 
