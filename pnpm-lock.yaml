@@ -40,8 +40,8 @@ importers:
         specifier: ^2.31.0
         version: 2.31.0(@typescript-eslint/parser@8.20.0(eslint@9.18.0)(typescript@5.7.2))(eslint-import-resolver-typescript@3.7.0)(eslint@9.18.0)
       eslint-plugin-prettier:
-        specifier: ^5.2.1
-        version: 5.2.1(eslint-config-prettier@9.1.0(eslint@9.18.0))(eslint@9.18.0)(prettier@3.4.2)
+        specifier: ^5.2.2
+        version: 5.2.2(eslint-config-prettier@9.1.0(eslint@9.18.0))(eslint@9.18.0)(prettier@3.4.2)
       jsii:
         specifier: ~5.5.0
         version: 5.5.17
@@ -763,8 +763,8 @@ packages:
       '@typescript-eslint/parser':
         optional: true
 
-  eslint-plugin-prettier@5.2.1:
-    resolution: {integrity: sha512-gH3iR3g4JfF+yYPaJYkN7jEl9QbweL/YfkoRlNnuIEHEz1vHVlCmWOS+eGGiRuzHQXdJFCOTxRgvju9b8VUmrw==}
+  eslint-plugin-prettier@5.2.2:
+    resolution: {integrity: sha512-1yI3/hf35wmlq66C8yOyrujQnel+v5l1Vop5Cl2I6ylyNTT1JbuUUnV3/41PzwTzcyDp/oF0jWE3HXvcH5AQOQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       '@types/eslint': '>=8.0.0'
@@ -1908,8 +1908,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@5.8.0-dev.20250114:
-    resolution: {integrity: sha512-DGtuEPL692JPjTQHFmP810EklYi8ndHgCWt61kRjQfaO25LFpxuB9ZNVs79u15t9JpkeIB6WLKpjY/JiRCzYMw==}
+  typescript@5.8.0-dev.20250115:
+    resolution: {integrity: sha512-SHJfXbiAiu4xOYnv1pw/sBiXcqmCEbN4q7ueEGD9PypKdFVKdz6pgcVK9pLQ7b+bw8Bjii7YPwD9ofWDL97s5Q==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -2702,7 +2702,7 @@ snapshots:
     dependencies:
       semver: 7.6.3
       shelljs: 0.8.5
-      typescript: 5.8.0-dev.20250114
+      typescript: 5.8.0-dev.20250115
 
   emoji-regex@8.0.0: {}
 
@@ -2868,7 +2868,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-plugin-prettier@5.2.1(eslint-config-prettier@9.1.0(eslint@9.18.0))(eslint@9.18.0)(prettier@3.4.2):
+  eslint-plugin-prettier@5.2.2(eslint-config-prettier@9.1.0(eslint@9.18.0))(eslint@9.18.0)(prettier@3.4.2):
     dependencies:
       eslint: 9.18.0
       prettier: 3.4.2
@@ -4110,7 +4110,7 @@ snapshots:
 
   typescript@5.7.2: {}
 
-  typescript@5.8.0-dev.20250114: {}
+  typescript@5.8.0-dev.20250115: {}
 
   uglify-js@3.19.3:
     optional: true
