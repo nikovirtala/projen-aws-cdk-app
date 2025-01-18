@@ -43,20 +43,20 @@ importers:
         specifier: ^5.2.2
         version: 5.2.2(eslint-config-prettier@9.1.0(eslint@9.18.0))(eslint@9.18.0)(prettier@3.4.2)
       jsii:
-        specifier: ~5.5.0
-        version: 5.5.17
+        specifier: ~5.7.0
+        version: 5.7.4
       jsii-diff:
         specifier: ^1.106.0
         version: 1.106.0
       jsii-docgen:
         specifier: ^10.5.0
-        version: 10.6.3(jsii-rosetta@5.5.22)
+        version: 10.6.3(jsii-rosetta@5.7.2)
       jsii-pacmak:
         specifier: ^1.106.0
-        version: 1.106.0(jsii-rosetta@5.5.22)
+        version: 1.106.0(jsii-rosetta@5.7.2)
       jsii-rosetta:
-        specifier: ~5.5.0
-        version: 5.5.22
+        specifier: ~5.7.0
+        version: 5.7.2
       prettier:
         specifier: ^3.4.2
         version: 3.4.2
@@ -649,10 +649,6 @@ packages:
     resolution: {integrity: sha512-sCm11ak2oY6DglEPpCB8TixLjWAxd3kJTs6UIcSasNYxXdFPV+YKlye92c8H4kKFqV5qYMIh7d+cYecEg0dIkA==}
     engines: {node: '>=6'}
 
-  downlevel-dts@0.11.0:
-    resolution: {integrity: sha512-vo835pntK7kzYStk7xUHDifiYJvXxVhUapt85uk2AI94gUUAQX9HNRtrcMHNSc3YHJUEHGbYIGsM99uIbgAtxw==}
-    hasBin: true
-
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
 
@@ -959,10 +955,6 @@ packages:
     peerDependencies:
       glob: ^8.0.3
 
-  glob@7.2.3:
-    resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Glob versions prior to v9 are no longer supported
-
   glob@8.1.0:
     resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==}
     engines: {node: '>=12'}
@@ -1076,10 +1068,6 @@ packages:
   internal-slot@1.0.7:
     resolution: {integrity: sha512-NGnrKwXzSms2qUUih/ILZ5JBqNTSa1+ZmP6flaIp6KmSElgE9qdndzS3cqjrDovwFdmwsGsLdeFgB6suw+1e9g==}
     engines: {node: '>= 0.4'}
-
-  interpret@1.4.0:
-    resolution: {integrity: sha512-agE4QfB2Lkp9uICn7BAqoscw4SZP9kTE2hxiFI3jBPmXJfdqiahTbUuKGsMoN2GtqL9AxhYioAcVvgsb1HvRbA==}
-    engines: {node: '>= 0.10'}
 
   is-array-buffer@3.0.4:
     resolution: {integrity: sha512-wcjaerHw0ydZwfhiKbXJWLDY8A7yV7KhjQOpb83hGgGfId/aQa4TOvwyzn2PuswW2gPCYEL/nEAiSVpdOj1lXw==}
@@ -1224,13 +1212,13 @@ packages:
     engines: {node: '>= 14.17.0'}
     hasBin: true
 
-  jsii-rosetta@5.5.22:
-    resolution: {integrity: sha512-k5sK5GwEW/kIgiXNmnFmzMK///hLvkgGciaDYbfqzZvHLvQO3AX6tZid3T/8/X3F+6gIvn8lVGRdLsu4BVFCow==}
+  jsii-rosetta@5.7.2:
+    resolution: {integrity: sha512-03OVxIEj7aI+yTkO0TT8Jg6PgKOYnceTka6ZN1CMScItpJJt+JA91Qr/4G/0DYQzfBwTORoctbF4uJksQIDvYQ==}
     engines: {node: '>= 18.12.0'}
     hasBin: true
 
-  jsii@5.5.17:
-    resolution: {integrity: sha512-m96OHVpJJfhRueSdFrySJ2dTmWVZH2D4jjviaRorqo+fuxR4gqggbwsatIInW0H/lvRYndG1ZAjTso9JUvWyoQ==}
+  jsii@5.7.4:
+    resolution: {integrity: sha512-L2JWl4ETXjXCe25t8vg0lFQ0ycqtMuGDd0j0kSxKNFO/g19c3mW5wcClPZF1YD1fG5VIHG4t9ZGJ8ZU8H7tZMg==}
     engines: {node: '>= 18.12.0'}
     hasBin: true
 
@@ -1490,10 +1478,6 @@ packages:
     resolution: {integrity: sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==}
     engines: {node: '>=8'}
 
-  path-is-absolute@1.0.1:
-    resolution: {integrity: sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==}
-    engines: {node: '>=0.10.0'}
-
   path-key@3.1.1:
     resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
     engines: {node: '>=8'}
@@ -1595,10 +1579,6 @@ packages:
     resolution: {integrity: sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==}
     engines: {node: '>= 6'}
 
-  rechoir@0.6.2:
-    resolution: {integrity: sha512-HFM8rkZ+i3zrV+4LQjwQ0W+ez98pApMGM3HUrN04j3CqzPOzl9nmP15Y8YXNm8QHGv/eacOVEjqhmWpkRV0NAw==}
-    engines: {node: '>= 0.10'}
-
   redent@3.0.0:
     resolution: {integrity: sha512-6tDA8g98We0zd0GvVeMT9arEOnTw9qM03L9cJXaCjrip1OO764RDBLBfrB4cwzNGDj5OA5ioymC9GkizgWJDUg==}
     engines: {node: '>=8'}
@@ -1691,11 +1671,6 @@ packages:
   shebang-regex@3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
-
-  shelljs@0.8.5:
-    resolution: {integrity: sha512-TiwcRcrkhHvbrZbnRcFYMLl30Dfov3HKqzp5tO5b4pt6G/SezKcYhmDg15zXVBswHmctSAQKznqNW2LO5tTDow==}
-    engines: {node: '>=4'}
-    hasBin: true
 
   side-channel@1.0.6:
     resolution: {integrity: sha512-fDW/EZ6Q9RiO8eFG8Hj+7u/oW+XrPTIChwCOM2+th2A6OblDtYYIpve9m+KvI9Z4C9qSEXlaGR6bTEYHReuglA==}
@@ -1898,18 +1873,8 @@ packages:
   typedarray@0.0.6:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
 
-  typescript@5.5.4:
-    resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
   typescript@5.7.2:
     resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
-  typescript@5.8.0-dev.20250117:
-    resolution: {integrity: sha512-uwGQZGYffY5jfnMEReMN9JVCe+R74b5zAEN48y71SyQuXVx4+6jV5nRVcyvhC0dJruKSbFxy0KJkkANMZpDSfw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -2698,12 +2663,6 @@ snapshots:
       find-up: 3.0.0
       minimatch: 3.1.2
 
-  downlevel-dts@0.11.0:
-    dependencies:
-      semver: 7.6.3
-      shelljs: 0.8.5
-      typescript: 5.8.0-dev.20250117
-
   emoji-regex@8.0.0: {}
 
   enhanced-resolve@5.17.1:
@@ -3104,15 +3063,6 @@ snapshots:
     dependencies:
       glob: 8.1.0
 
-  glob@7.2.3:
-    dependencies:
-      fs.realpath: 1.0.0
-      inflight: 1.0.6
-      inherits: 2.0.4
-      minimatch: 3.1.2
-      once: 1.4.0
-      path-is-absolute: 1.0.1
-
   glob@8.1.0:
     dependencies:
       fs.realpath: 1.0.0
@@ -3222,8 +3172,6 @@ snapshots:
       es-errors: 1.3.0
       hasown: 2.0.2
       side-channel: 1.0.6
-
-  interpret@1.4.0: {}
 
   is-array-buffer@3.0.4:
     dependencies:
@@ -3361,7 +3309,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  jsii-docgen@10.6.3(jsii-rosetta@5.5.22):
+  jsii-docgen@10.6.3(jsii-rosetta@5.7.2):
     dependencies:
       '@jsii/spec': 1.106.0
       case: 1.6.3
@@ -3369,11 +3317,11 @@ snapshots:
       glob: 8.1.0
       glob-promise: 6.0.7(glob@8.1.0)
       jsii-reflect: 1.106.0
-      jsii-rosetta: 5.5.22
+      jsii-rosetta: 5.7.2
       semver: 7.6.3
       yargs: 16.2.0
 
-  jsii-pacmak@1.106.0(jsii-rosetta@5.5.22):
+  jsii-pacmak@1.106.0(jsii-rosetta@5.7.2):
     dependencies:
       '@jsii/check-node': 1.106.0
       '@jsii/spec': 1.106.0
@@ -3383,7 +3331,7 @@ snapshots:
       escape-string-regexp: 4.0.0
       fs-extra: 10.1.0
       jsii-reflect: 1.106.0
-      jsii-rosetta: 5.5.22
+      jsii-rosetta: 5.7.2
       semver: 7.6.3
       spdx-license-list: 6.9.0
       xmlbuilder: 15.1.1
@@ -3398,7 +3346,7 @@ snapshots:
       oo-ascii-tree: 1.106.0
       yargs: 16.2.0
 
-  jsii-rosetta@5.5.22:
+  jsii-rosetta@5.7.2:
     dependencies:
       '@jsii/check-node': 1.106.0
       '@jsii/spec': 1.106.0
@@ -3406,30 +3354,29 @@ snapshots:
       chalk: 4.1.2
       commonmark: 0.31.2
       fast-glob: 3.3.3
-      jsii: 5.5.17
+      jsii: 5.7.4
       semver: 7.6.3
       semver-intersect: 1.5.0
       stream-json: 1.9.1
-      typescript: 5.5.4
+      typescript: 5.7.2
       workerpool: 6.5.1
       yargs: 17.7.2
     transitivePeerDependencies:
       - supports-color
 
-  jsii@5.5.17:
+  jsii@5.7.4:
     dependencies:
       '@jsii/check-node': 1.106.0
       '@jsii/spec': 1.106.0
       case: 1.6.3
       chalk: 4.1.2
-      downlevel-dts: 0.11.0
       fast-deep-equal: 3.1.3
       log4js: 6.9.1
       semver: 7.6.3
       semver-intersect: 1.5.0
       sort-json: 2.0.1
       spdx-license-list: 6.9.0
-      typescript: 5.5.4
+      typescript: 5.7.2
       yargs: 17.7.2
     transitivePeerDependencies:
       - supports-color
@@ -3702,8 +3649,6 @@ snapshots:
 
   path-exists@4.0.0: {}
 
-  path-is-absolute@1.0.1: {}
-
   path-key@3.1.1: {}
 
   path-parse@1.0.7: {}
@@ -3781,10 +3726,6 @@ snapshots:
       inherits: 2.0.4
       string_decoder: 1.3.0
       util-deprecate: 1.0.2
-
-  rechoir@0.6.2:
-    dependencies:
-      resolve: 1.22.8
 
   redent@3.0.0:
     dependencies:
@@ -3876,12 +3817,6 @@ snapshots:
       shebang-regex: 3.0.0
 
   shebang-regex@3.0.0: {}
-
-  shelljs@0.8.5:
-    dependencies:
-      glob: 7.2.3
-      interpret: 1.4.0
-      rechoir: 0.6.2
 
   side-channel@1.0.6:
     dependencies:
@@ -4106,11 +4041,7 @@ snapshots:
 
   typedarray@0.0.6: {}
 
-  typescript@5.5.4: {}
-
   typescript@5.7.2: {}
-
-  typescript@5.8.0-dev.20250117: {}
 
   uglify-js@3.19.3:
     optional: true
