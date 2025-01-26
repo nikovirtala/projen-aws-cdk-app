@@ -77,7 +77,7 @@ new ProjenStruct(project, { name: "AwsCdkAppOptions", outputFileOptions: { reado
         },
     );
 
-project.addDevDeps("@nikovirtala/projen-vitest", "vitest@^2");
+project.addDevDeps("@nikovirtala/projen-vitest");
 new Vitest(project);
 
 project.vscode?.extensions.addRecommendations("dbaeumer.vscode-eslint", "esbenp.prettier-vscode");
