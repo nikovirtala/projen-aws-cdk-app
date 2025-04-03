@@ -17,7 +17,7 @@ const project = new cdk.JsiiProject({
             labels: ["auto-approve", "auto-merge"],
         },
     },
-    devDeps: ["@jsii/spec", "@mrgrain/jsii-struct-builder", "@nikovirtala/projen-vitest"],
+    devDeps: ["@jsii/spec", "@mrgrain/jsii-struct-builder", "@nikovirtala/projen-vitest@^2"],
     autoApproveOptions: {
         secret: "GITHUB_TOKEN",
         allowedUsernames: ["nikovirtala"],
@@ -78,7 +78,7 @@ new ProjenStruct(project, { name: "AwsCdkAppOptions", outputFileOptions: { reado
     );
 
 project.addDevDeps("@nikovirtala/projen-vitest");
-new Vitest(project);
+new Vitest(project, { vitestVersion: "^3" });
 
 project.vscode?.extensions.addRecommendations("dbaeumer.vscode-eslint", "esbenp.prettier-vscode");
 

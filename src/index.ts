@@ -120,8 +120,9 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
         });
 
         if (vitest ?? true) {
-            this.addDevDeps("@nikovirtala/projen-vitest");
-            new Vitest(this, vitestOptions);
+            const vitestVersion = "^3";
+            this.addDevDeps("@nikovirtala/projen-vitest", `vitest@${vitestVersion}`);
+            new Vitest(this, { vitestVersion, ...vitestOptions });
         }
     }
 }
