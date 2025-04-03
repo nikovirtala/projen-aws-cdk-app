@@ -3,7 +3,7 @@ import { ProjenStruct, Struct } from "@mrgrain/jsii-struct-builder";
 import { Vitest } from "@nikovirtala/projen-vitest";
 import { cdk, javascript, TextFile } from "projen";
 
-const nodeVersion = "22.12.0";
+const nodeVersion = "22.14.0";
 
 const project = new cdk.JsiiProject({
     author: "Niko Virtala",
