@@ -557,7 +557,7 @@ cdk.out/
       {
         "name": "typescript",
         "type": "build",
-        "version": "5.7.2",
+        "version": "5.8.2",
       },
       {
         "name": "vitest",
@@ -1130,7 +1130,7 @@ cdk.out/
       "prettier": "*",
       "projen": "*",
       "tsx": "*",
-      "typescript": "5.7.2",
+      "typescript": "5.8.2",
       "vitest": "^2",
     },
     "engines": {

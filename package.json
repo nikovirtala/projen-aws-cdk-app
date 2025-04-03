@@ -59,7 +59,7 @@
     "prettier": "^3.5.0",
     "projen": "^0.91.8",
     "ts-node": "^10.9.2",
-    "typescript": "5.7.2",
+    "typescript": "5.8.2",
     "vitest": "^2"
   },
   "peerDependencies": {

@@ -77,7 +77,7 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
                     ...(tsconfig?.compilerOptions ?? {}),
                 },
             },
-            typescriptVersion: typescriptVersion ?? "5.7.2",
+            typescriptVersion: typescriptVersion ?? "5.8.2",
             ...awsCdkTypeScriptAppOptions,
         });
 
