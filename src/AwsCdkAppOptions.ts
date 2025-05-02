@@ -64,6 +64,11 @@ export interface AwsCdkAppOptions {
      */
     readonly appEntrypoint?: string;
     /**
+     * The command line to execute in order to synthesize the CDK application (language specific).
+     * @stability experimental
+     */
+    readonly app?: string;
+    /**
    * Minimum version of the `constructs` library to depend on.
    * @default - for CDK 1.x the default is "3.2.27", for CDK 2.x the default is
 "10.0.5".
@@ -583,6 +588,7 @@ export interface AwsCdkAppOptions {
      * - Working directory: the project directory.
      * - `$VERSION`: the current version. Looks like `1.2.3`.
      * - `$LATEST_TAG`: the most recent tag. Looks like `prefix-v1.2.3`, or may be unset.
+     * - `$SUGGESTED_BUMP`: the suggested bump action based on commits. One of `major|minor|patch|none`.
      *
      * The command should print one of the following to `stdout`:
      *
