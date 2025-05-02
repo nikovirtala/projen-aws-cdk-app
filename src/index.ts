@@ -12,6 +12,8 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
             cdkVersionPinning,
             defaultReleaseBranch,
             minNodeVersion,
+            packageManager,
+            pnpmVersion,
             prettier,
             prettierOptions,
             sampleCode,
@@ -61,6 +63,8 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
             defaultReleaseBranch: defaultReleaseBranch ?? "main",
             jest: false,
             minNodeVersion: nodeVersion,
+            packageManager: packageManager ?? javascript.NodePackageManager.PNPM,
+            pnpmVersion: pnpmVersion ?? "10",
             prettier: prettier ?? true,
             prettierOptions: prettierOptions ?? {
                 settings: {
