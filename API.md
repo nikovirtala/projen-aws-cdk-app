@@ -1685,6 +1685,7 @@ const awsCdkAppOptions: AwsCdkAppOptions = { ... }
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | The maximum node version supported by this package. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. |
+| <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.mise">mise</a></code> | <code>boolean</code> | Create mise.toml with project Node.js version. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.nextVersionCommand">nextVersionCommand</a></code> | <code>string</code> | A shell command to control the next version to release. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
@@ -1693,6 +1694,7 @@ const awsCdkAppOptions: AwsCdkAppOptions = { ... }
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.npmProvenance">npmProvenance</a></code> | <code>boolean</code> | Should provenance statements be generated when the package is published. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
+| <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.nvm">nvm</a></code> | <code>boolean</code> | Create nvmrc with project Node.js version. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The Node Package Manager used to execute scripts. |
@@ -2888,6 +2890,19 @@ To change the node version of your CI/CD workflows, use `workflowNodeVersion`.
 
 ---
 
+##### `mise`<sup>Optional</sup> <a name="mise" id="@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.mise"></a>
+
+```typescript
+public readonly mise: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Create mise.toml with project Node.js version.
+
+---
+
 ##### `nextVersionCommand`<sup>Optional</sup> <a name="nextVersionCommand" id="@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.nextVersionCommand"></a>
 
 ```typescript
@@ -3018,6 +3033,19 @@ public readonly npmTokenSecret: string;
 - *Default:* "NPM_TOKEN"
 
 GitHub secret which contains the NPM token to use when publishing packages.
+
+---
+
+##### `nvm`<sup>Optional</sup> <a name="nvm" id="@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.nvm"></a>
+
+```typescript
+public readonly nvm: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Create nvmrc with project Node.js version.
 
 ---
 

@@ -58,6 +58,24 @@ new ProjenStruct(project, { name: "AwsCdkAppOptions", outputFileOptions: { reado
     .omit("tsJestOptions")
     .add(
         {
+            name: "mise",
+            type: { primitive: PrimitiveType.Boolean },
+            optional: true,
+            docs: {
+                summary: "Create mise.toml with project Node.js version",
+                default: "true",
+            },
+        },
+        {
+            name: "nvm",
+            type: { primitive: PrimitiveType.Boolean },
+            optional: true,
+            docs: {
+                summary: "Create nvmrc with project Node.js version",
+                default: "false",
+            },
+        },
+        {
             name: "vitest",
             type: { primitive: PrimitiveType.Boolean },
             optional: true,
@@ -91,10 +109,10 @@ project.vscode?.settings.addSettings({
     "editor.tabSize": 4,
 });
 
-new TextFile(project, ".nvmrc", {
+new TextFile(project, "mise.toml", {
     committed: true,
     readonly: true,
-    lines: ["v" + nodeVersion],
+    lines: ["[tools]", `node = "${nodeVersion}"`],
 });
 
 project.synth();

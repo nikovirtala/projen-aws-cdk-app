@@ -12,6 +12,8 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
             cdkVersionPinning,
             defaultReleaseBranch,
             minNodeVersion,
+            mise,
+            nvm,
             packageManager,
             pnpmVersion,
             prettier,
@@ -117,11 +119,21 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
             "editor.tabSize": 4,
         });
 
-        new TextFile(this, ".nvmrc", {
-            committed: true,
-            readonly: true,
-            lines: ["v" + nodeVersion],
-        });
+        if (nvm ?? false) {
+            new TextFile(this, ".nvmrc", {
+                committed: true,
+                readonly: true,
+                lines: ["v" + nodeVersion],
+            });
+        }
+
+        if (mise ?? true) {
+            new TextFile(this, "mise.toml", {
+                committed: true,
+                readonly: true,
+                lines: ["[tools]", `node = "${nodeVersion}"`],
+            });
+        }
 
         if (vitest ?? true) {
             const vitestVersion = "^3";

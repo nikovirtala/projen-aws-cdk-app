@@ -54,6 +54,6 @@ tsconfig.json
 !/vitest.config.ts
 !/.vscode/extensions.json
 !/.vscode/settings.json
-!/.nvmrc
+!/mise.toml
 !/.projenrc.ts
 !/src/AwsCdkAppOptions.ts

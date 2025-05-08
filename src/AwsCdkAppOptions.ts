@@ -1084,4 +1084,14 @@ export interface AwsCdkAppOptions {
      * @default true
      */
     readonly vitest?: boolean;
+    /**
+     * Create nvmrc with project Node.js version
+     * @default false
+     */
+    readonly nvm?: boolean;
+    /**
+     * Create mise.toml with project Node.js version
+     * @default true
+     */
+    readonly mise?: boolean;
 }
