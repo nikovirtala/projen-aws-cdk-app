@@ -60,17 +60,14 @@ exports[`AwsCdkApp > snapshot 1`] = `
           ],
         },
       ],
-      "@typescript-eslint/no-floating-promises": [
+      "@typescript-eslint/no-floating-promises": "error",
+      "@typescript-eslint/no-require-imports": "error",
+      "@typescript-eslint/no-shadow": "error",
+      "@typescript-eslint/return-await": "error",
+      "curly": [
         "error",
-      ],
-      "@typescript-eslint/no-require-imports": [
-        "error",
-      ],
-      "@typescript-eslint/no-shadow": [
-        "error",
-      ],
-      "@typescript-eslint/return-await": [
-        "error",
+        "multi-line",
+        "consistent",
       ],
       "dot-notation": [
         "error",
@@ -107,13 +104,7 @@ exports[`AwsCdkApp > snapshot 1`] = `
           ],
         },
       ],
-      "key-spacing": [
-        "error",
-      ],
       "no-bitwise": [
-        "error",
-      ],
-      "no-multiple-empty-lines": [
         "error",
       ],
       "no-return-await": [
@@ -121,9 +112,6 @@ exports[`AwsCdkApp > snapshot 1`] = `
       ],
       "no-shadow": [
         "off",
-      ],
-      "no-trailing-spaces": [
-        "error",
       ],
     },
     "settings": {
@@ -1248,9 +1236,13 @@ test('Snapshot', () => {
       "strictPropertyInitialization": true,
       "stripInternal": true,
       "target": "esnext",
+      "typeRoots": [
+        "./node_modules/@types",
+      ],
     },
     "exclude": [
       "node_modules",
+      "cdk.out",
     ],
     "include": [
       "src/**/*.ts",
@@ -1291,8 +1283,14 @@ test('Snapshot', () => {
       "strictPropertyInitialization": true,
       "stripInternal": true,
       "target": "esnext",
+      "typeRoots": [
+        "./node_modules/@types",
+      ],
     },
-    "exclude": [],
+    "exclude": [
+      "node_modules",
+      "cdk.out",
+    ],
     "include": [
       "src/**/*.ts",
     ],

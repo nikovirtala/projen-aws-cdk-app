@@ -36,44 +36,44 @@
     "organization": false
   },
   "devDependencies": {
-    "@jsii/spec": "^1.111.0",
-    "@mrgrain/jsii-struct-builder": "^0.7.54",
-    "@nikovirtala/projen-vitest": "2.0.14",
+    "@jsii/spec": "^1.112.0",
+    "@mrgrain/jsii-struct-builder": "^0.7.55",
+    "@nikovirtala/projen-vitest": "2.0.20",
     "@types/node": "^22",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
     "@vitest/coverage-v8": "^3",
-    "aws-cdk-lib": "2.194.0",
+    "aws-cdk-lib": "2.195.0",
     "commit-and-tag-version": "^12",
     "constructs": "^10.4.2",
     "eslint": "^9",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.10.1",
     "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-prettier": "^5.4.0",
     "jsii": "~5.8.3",
-    "jsii-diff": "^1.111.0",
+    "jsii-diff": "^1.112.0",
     "jsii-docgen": "^10.5.0",
-    "jsii-pacmak": "^1.111.0",
+    "jsii-pacmak": "^1.112.0",
     "jsii-rosetta": "~5.8.3",
     "prettier": "^3.5.3",
-    "projen": "^0.91.29",
+    "projen": "^0.92.0",
     "ts-node": "^10.9.2",
     "typescript": "5.8.3",
     "vitest": "^3"
   },
   "peerDependencies": {
-    "@nikovirtala/projen-vitest": "^2.0.14",
-    "aws-cdk-lib": "^2.194.0",
+    "@nikovirtala/projen-vitest": "^2.0.20",
+    "aws-cdk-lib": "^2.195.0",
     "constructs": "^10.4.2",
-    "projen": "^0.91.29"
+    "projen": "^0.92.0"
   },
   "dependencies": {
-    "projen": "^0.91.29"
+    "projen": "^0.92.0"
   },
   "pnpm": {},
   "engines": {
-    "node": ">= 22.14.0"
+    "node": ">= 22.15.0"
   },
   "main": "lib/index.js",
   "license": "MIT",
