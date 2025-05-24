@@ -57,19 +57,19 @@
     "jsii-pacmak": "^1.112.0",
     "jsii-rosetta": "~5.8.3",
     "prettier": "^3.5.3",
-    "projen": "^0.92.6",
+    "projen": "^0.92.7",
     "ts-node": "^10.9.2",
     "typescript": "5.8.3",
     "vitest": "^3"
   },
   "peerDependencies": {
-    "@nikovirtala/projen-vitest": "^2.0.30",
-    "aws-cdk-lib": "^2.197.0",
+    "@nikovirtala/projen-vitest": "^2.0.31",
+    "aws-cdk-lib": "^2.198.0",
     "constructs": "^10.4.2",
-    "projen": "^0.92.6"
+    "projen": "^0.92.7"
   },
   "dependencies": {
-    "projen": "^0.92.6"
+    "projen": "^0.92.7"
   },
   "pnpm": {},
   "engines": {
