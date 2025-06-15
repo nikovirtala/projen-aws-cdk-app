@@ -60,7 +60,7 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
         const nodeVersion = minNodeVersion ?? "22.15.0";
 
         super({
-            cdkVersion: !cdkVersion || cdkVersion === "2.1.0" ? "2.197.0" : cdkVersion, // this does not work!
+            cdkVersion: !cdkVersion || cdkVersion === "2.1.0" ? "2.201.0" : cdkVersion, // this does not work!
             cdkVersionPinning: cdkVersionPinning ?? false,
             defaultReleaseBranch: defaultReleaseBranch ?? "main",
             jest: false,
