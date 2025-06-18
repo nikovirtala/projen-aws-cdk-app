@@ -85,7 +85,6 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
                 },
             },
             typescriptVersion: typescriptVersion ?? "5.8.3",
-            ...awsCdkTypeScriptAppOptions,
             biome: true,
             biomeOptions: biomeOptions ?? defaultBiomeOptions,
             eslint: false,
@@ -93,6 +92,7 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
             prettier: false,
             projenrcTs: true,
             sampleCode: true,
+            ...awsCdkTypeScriptAppOptions,
         });
 
         // switch commonjs to es modules
