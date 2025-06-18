@@ -1633,7 +1633,6 @@ const awsCdkAppOptions: AwsCdkAppOptions = { ... }
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.autoMerge">autoMerge</a></code> | <code>boolean</code> | Enable automatic merging on GitHub. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.autoMergeOptions">autoMergeOptions</a></code> | <code>projen.github.AutoMergeOptions</code> | Configure options for automatic merging on GitHub. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.bin">bin</a></code> | <code>{[ key: string ]: string}</code> | Binary programs vended with your module. |
-| <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.biome">biome</a></code> | <code>boolean</code> | Setup Biome. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.biomeOptions">biomeOptions</a></code> | <code>projen.javascript.BiomeOptions</code> | Biome options. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.bugsEmail">bugsEmail</a></code> | <code>string</code> | The email address to which issues should be reported. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.bugsUrl">bugsUrl</a></code> | <code>string</code> | The url to your project's issue tracker. |
@@ -2000,19 +1999,6 @@ Binary programs vended with your module.
 You can use this option to add/customize how binaries are represented in
 your `package.json`, but unless `autoDetectBin` is `false`, every
 executable file under `bin` will automatically be added to this section.
-
----
-
-##### `biome`<sup>Optional</sup> <a name="biome" id="@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.biome"></a>
-
-```typescript
-public readonly biome: boolean;
-```
-
-- *Type:* boolean
-- *Default:* false
-
-Setup Biome.
 
 ---
 

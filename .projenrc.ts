@@ -65,6 +65,7 @@ new ProjenStruct(project, {
 })
     .mixin(Struct.fromFqn("projen.awscdk.AwsCdkTypeScriptAppOptions"))
     .withoutDeprecated()
+    .omit("biome")
     .omit("eslint")
     .omit("eslintOptions")
     .omit("jest")

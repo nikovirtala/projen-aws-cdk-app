@@ -8,7 +8,6 @@ export { AwsCdkAppOptions } from "./AwsCdkAppOptions.generated";
 export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
     constructor(options: AwsCdkAppOptions) {
         const {
-            biome,
             biomeOptions,
             cdkVersion,
             cdkVersionPinning,
@@ -73,8 +72,6 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
         const nodeVersion = minNodeVersion ?? "22.16.0";
 
         super({
-            biome: biome ?? true,
-            biomeOptions: biomeOptions ?? defaultBiomeOptions,
             cdkVersion: !cdkVersion || cdkVersion === "2.1.0" ? "2.201.0" : cdkVersion, // this does not work!
             cdkVersionPinning: cdkVersionPinning ?? false,
             defaultReleaseBranch: defaultReleaseBranch ?? "main",
@@ -89,6 +86,8 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
             },
             typescriptVersion: typescriptVersion ?? "5.8.3",
             ...awsCdkTypeScriptAppOptions,
+            biome: true,
+            biomeOptions: biomeOptions ?? defaultBiomeOptions,
             eslint: false,
             jest: false,
             prettier: false,
