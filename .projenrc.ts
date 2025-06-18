@@ -1,7 +1,7 @@
 import { PrimitiveType } from "@jsii/spec";
 import { ProjenStruct, Struct } from "@mrgrain/jsii-struct-builder";
 import { Vitest } from "@nikovirtala/projen-vitest";
-import { cdk, javascript, TextFile } from "projen";
+import { TextFile, cdk, javascript } from "projen";
 
 const nodeVersion = "22.16.0";
 
@@ -22,6 +22,21 @@ const project = new cdk.JsiiProject({
         secret: "GITHUB_TOKEN",
         allowedUsernames: ["nikovirtala"],
     },
+    eslint: false,
+    biome: true,
+    biomeOptions: {
+        biomeConfig: {
+            formatter: {
+                indentStyle: "space",
+                indentWidth: 4,
+                lineWidth: 120,
+                useEditorconfig: false,
+            },
+        },
+        formatter: true,
+        linter: true,
+        organizeImports: true,
+    },
     mergify: true,
     autoMerge: true,
     jest: false,
@@ -35,14 +50,7 @@ const project = new cdk.JsiiProject({
     packageName: "@nikovirtala/projen-aws-cdk-app",
     peerDeps: ["@nikovirtala/projen-vitest", "aws-cdk-lib", "constructs", "projen"],
     pnpmVersion: "10",
-    prettier: true,
-    prettierOptions: {
-        settings: {
-            printWidth: 120,
-            tabWidth: 4,
-            trailingComma: javascript.TrailingComma.ALL,
-        },
-    },
+    prettier: false,
     projenrcTs: true,
     releaseToNpm: true,
     repositoryUrl: "https://github.com/nikovirtala/projen-aws-cdk-app.git",
@@ -50,11 +58,20 @@ const project = new cdk.JsiiProject({
 });
 
 // TypeScript utility types are **not** allowed in `jsii` applications :´(
-new ProjenStruct(project, { name: "AwsCdkAppOptions", outputFileOptions: { readonly: false } })
+new ProjenStruct(project, {
+    name: "AwsCdkAppOptions",
+    filePath: "./src/AwsCdkAppOptions.generated.ts",
+    outputFileOptions: { readonly: false },
+})
     .mixin(Struct.fromFqn("projen.awscdk.AwsCdkTypeScriptAppOptions"))
     .withoutDeprecated()
+    .omit("eslint")
+    .omit("eslintOptions")
     .omit("jest")
     .omit("jestOptions")
+    .omit("prettier")
+    .omit("prettierOptions")
+    .omit("sampleCode")
     .omit("tsJestOptions")
     .add(
         {
@@ -97,13 +114,13 @@ new ProjenStruct(project, { name: "AwsCdkAppOptions", outputFileOptions: { reado
 
 new Vitest(project, { vitestVersion: "^3" });
 
-project.vscode?.extensions.addRecommendations("dbaeumer.vscode-eslint", "esbenp.prettier-vscode");
+project.vscode?.extensions.addRecommendations("biomejs.biome");
 
 project.vscode?.settings.addSettings({
     "editor.codeActionsOnSave": {
-        "source.fixAll": "explicit",
+        "source.organizeImports.biome": "always",
     },
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "biomejs.biome",
     "editor.formatOnSave": true,
     "editor.tabSize": 4,
 });

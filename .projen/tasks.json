@@ -1,5 +1,14 @@
 {
   "tasks": {
+    "biome": {
+      "name": "biome",
+      "description": "Runs Biome against the codebase",
+      "steps": [
+        {
+          "exec": "biome check --write $@ src test build-tools projenrc .projenrc.ts"
+        }
+      ]
+    },
     "build": {
       "name": "build",
       "description": "Full release build",
@@ -122,19 +131,6 @@
         }
       ]
     },
-    "eslint": {
-      "name": "eslint",
-      "description": "Runs eslint against the codebase",
-      "env": {
-        "ESLINT_USE_FLAT_CONFIG": "false"
-      },
-      "steps": [
-        {
-          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ src test build-tools projenrc .projenrc.ts",
-          "receiveArgs": true
-        }
-      ]
-    },
     "install": {
       "name": "install",
       "description": "Install project dependencies and update lockfile (non-frozen)",
@@ -231,7 +227,7 @@
       "description": "Run tests",
       "steps": [
         {
-          "spawn": "eslint"
+          "spawn": "biome"
         },
         {
           "exec": "vitest run",
@@ -282,13 +278,13 @@
       },
       "steps": [
         {
-          "exec": "pnpm dlx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@jsii/spec,@mrgrain/jsii-struct-builder,@nikovirtala/projen-vitest,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-prettier,jsii-diff,jsii-pacmak,prettier,projen,ts-node,aws-cdk-lib,constructs"
+          "exec": "pnpm dlx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@jsii/spec,@mrgrain/jsii-struct-builder,@nikovirtala/projen-vitest,jsii-diff,jsii-pacmak,projen,ts-node,aws-cdk-lib,constructs"
         },
         {
           "exec": "pnpm i --no-frozen-lockfile"
         },
         {
-          "exec": "pnpm update @jsii/spec @mrgrain/jsii-struct-builder @nikovirtala/projen-vitest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser commit-and-tag-version constructs eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii prettier projen ts-node typescript vitest @vitest/coverage-v8 aws-cdk-lib"
+          "exec": "pnpm update @biomejs/biome @jsii/spec @mrgrain/jsii-struct-builder @nikovirtala/projen-vitest @types/node commit-and-tag-version constructs jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen ts-node typescript vitest @vitest/coverage-v8 aws-cdk-lib"
         },
         {
           "exec": "npx projen"

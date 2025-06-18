@@ -38,15 +38,13 @@ jspm_packages/
 !/.mergify.yml
 !/.github/workflows/upgrade-main.yml
 !/.github/pull_request_template.md
-!/.prettierignore
-!/.prettierrc.json
+!/biome.jsonc
 !/.npmrc
 !/test/
 !/tsconfig.dev.json
 !/src/
 /lib
 /dist/
-!/.eslintrc.json
 .jsii
 tsconfig.json
 !/API.md
@@ -56,4 +54,4 @@ tsconfig.json
 !/.vscode/settings.json
 !/mise.toml
 !/.projenrc.ts
-!/src/AwsCdkAppOptions.ts
+!/src/AwsCdkAppOptions.generated.ts

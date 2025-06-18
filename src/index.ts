@@ -1,13 +1,15 @@
-import * as path from "path";
+import * as path from "node:path";
 import { Vitest } from "@nikovirtala/projen-vitest";
-import { awscdk, javascript, TextFile } from "projen";
-import { AwsCdkAppOptions } from "./AwsCdkAppOptions";
+import { TextFile, awscdk, javascript } from "projen";
+import type { AwsCdkAppOptions } from "./AwsCdkAppOptions.generated";
 
-export { AwsCdkAppOptions } from "./AwsCdkAppOptions";
+export { AwsCdkAppOptions } from "./AwsCdkAppOptions.generated";
 
 export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
     constructor(options: AwsCdkAppOptions) {
         const {
+            biome,
+            biomeOptions,
             cdkVersion,
             cdkVersionPinning,
             defaultReleaseBranch,
@@ -16,15 +18,26 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
             nvm,
             packageManager,
             pnpmVersion,
-            prettier,
-            prettierOptions,
-            sampleCode,
             tsconfig,
             typescriptVersion,
             vitest,
             vitestOptions,
             ...awsCdkTypeScriptAppOptions
         } = options;
+
+        const defaultBiomeOptions: javascript.BiomeOptions = {
+            biomeConfig: {
+                formatter: {
+                    indentStyle: "space",
+                    indentWidth: 4,
+                    lineWidth: 120,
+                    useEditorconfig: false,
+                },
+            },
+            formatter: true,
+            linter: true,
+            organizeImports: true,
+        };
 
         const defaultTsConfig = {
             compilerOptions: {
@@ -60,23 +73,14 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
         const nodeVersion = minNodeVersion ?? "22.16.0";
 
         super({
+            biome: biome ?? true,
+            biomeOptions: biomeOptions ?? defaultBiomeOptions,
             cdkVersion: !cdkVersion || cdkVersion === "2.1.0" ? "2.201.0" : cdkVersion, // this does not work!
             cdkVersionPinning: cdkVersionPinning ?? false,
             defaultReleaseBranch: defaultReleaseBranch ?? "main",
-            jest: false,
             minNodeVersion: nodeVersion,
             packageManager: packageManager ?? javascript.NodePackageManager.PNPM,
             pnpmVersion: pnpmVersion ?? "10",
-            prettier: prettier ?? true,
-            prettierOptions: prettierOptions ?? {
-                settings: {
-                    printWidth: 120,
-                    tabWidth: 4,
-                    trailingComma: javascript.TrailingComma.ALL,
-                },
-            },
-            projenrcTs: true,
-            sampleCode: sampleCode ?? true,
             tsconfig: {
                 compilerOptions: {
                     ...defaultTsConfig.compilerOptions,
@@ -85,6 +89,11 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
             },
             typescriptVersion: typescriptVersion ?? "5.8.3",
             ...awsCdkTypeScriptAppOptions,
+            eslint: false,
+            jest: false,
+            prettier: false,
+            projenrcTs: true,
+            sampleCode: true,
         });
 
         // switch commonjs to es modules
@@ -101,20 +110,13 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
             `tsx --tsconfig ${this.tsconfig?.file.path} ${path.posix.join(this.srcdir, this.appEntrypoint)}`,
         );
 
-        // lint code with modern ecma version
-        this.tryFindObjectFile(".eslintrc.json")?.addOverride("parserOptions.ecmaVersion", "latest");
-
-        this.eslint?.addRules({
-            "@typescript-eslint/await-thenable": "error",
-        });
-
-        this.vscode?.extensions.addRecommendations("dbaeumer.vscode-eslint", "esbenp.prettier-vscode");
+        this.vscode?.extensions.addRecommendations("biomejs.biome");
 
         this.vscode?.settings.addSettings({
             "editor.codeActionsOnSave": {
-                "source.fixAll": "explicit",
+                "source.organizeImports.biome": "always",
             },
-            "editor.defaultFormatter": "esbenp.prettier-vscode",
+            "editor.defaultFormatter": "biomejs.biome",
             "editor.formatOnSave": true,
             "editor.tabSize": 4,
         });
@@ -123,7 +125,7 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
             new TextFile(this, ".nvmrc", {
                 committed: true,
                 readonly: true,
-                lines: ["v" + nodeVersion],
+                lines: [`v${nodeVersion}`],
             });
         }
 
