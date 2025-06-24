@@ -1,6 +1,7 @@
 import * as path from "node:path";
 import { Vitest } from "@nikovirtala/projen-vitest";
-import { TextFile, awscdk, javascript } from "projen";
+import { awscdk, javascript, TextFile } from "projen";
+import { IndentStyle } from "projen/lib/javascript/biome/biome-config";
 import type { AwsCdkAppOptions } from "./AwsCdkAppOptions.generated";
 
 export { AwsCdkAppOptions } from "./AwsCdkAppOptions.generated";
@@ -27,7 +28,7 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
         const defaultBiomeOptions: javascript.BiomeOptions = {
             biomeConfig: {
                 formatter: {
-                    indentStyle: "space",
+                    indentStyle: IndentStyle.SPACE,
                     indentWidth: 4,
                     lineWidth: 120,
                     useEditorconfig: false,
@@ -35,7 +36,6 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
             },
             formatter: true,
             linter: true,
-            organizeImports: true,
         };
 
         const defaultTsConfig = {

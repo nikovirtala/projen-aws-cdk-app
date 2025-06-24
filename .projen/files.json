@@ -15,7 +15,6 @@
     ".projen/tasks.json",
     ".vscode/extensions.json",
     ".vscode/settings.json",
-    "biome.jsonc",
     "LICENSE",
     "mise.toml",
     "tsconfig.dev.json",

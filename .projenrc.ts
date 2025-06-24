@@ -1,7 +1,8 @@
 import { PrimitiveType } from "@jsii/spec";
 import { ProjenStruct, Struct } from "@mrgrain/jsii-struct-builder";
 import { Vitest } from "@nikovirtala/projen-vitest";
-import { TextFile, cdk, javascript } from "projen";
+import { cdk, javascript, TextFile } from "projen";
+import { IndentStyle } from "projen/lib/javascript/biome/biome-config";
 
 const nodeVersion = "22.16.0";
 
@@ -27,7 +28,7 @@ const project = new cdk.JsiiProject({
     biomeOptions: {
         biomeConfig: {
             formatter: {
-                indentStyle: "space",
+                indentStyle: IndentStyle.SPACE,
                 indentWidth: 4,
                 lineWidth: 120,
                 useEditorconfig: false,
@@ -35,7 +36,6 @@ const project = new cdk.JsiiProject({
         },
         formatter: true,
         linter: true,
-        organizeImports: true,
     },
     mergify: true,
     autoMerge: true,
