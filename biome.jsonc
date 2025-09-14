@@ -12,7 +12,24 @@
       "src/**",
       "test/**",
       ".projenrc.ts",
-      "projenrc/**"
+      "projenrc/**",
+      "!.gitattributes",
+      "!.github/workflows/auto-approve.yml",
+      "!.github/workflows/build.yml",
+      "!.github/workflows/pull-request-lint.yml",
+      "!.github/workflows/release.yml",
+      "!.github/workflows/upgrade-main.yml",
+      "!.gitignore",
+      "!.mergify.yml",
+      "!.npmrc",
+      "!.projen/deps.json",
+      "!.projen/files.json",
+      "!.projen/tasks.json",
+      "!.vscode/extensions.json",
+      "!.vscode/settings.json",
+      "!mise.toml",
+      "!tsconfig.dev.json",
+      "!vitest.config.ts"
     ]
   },
   "formatter": {
@@ -38,5 +55,5 @@
     "enabled": true,
     "useIgnoreFile": true
   },
-  "$schema": "node_modules/.pnpm/@biomejs+biome@2.1.2/node_modules/@biomejs/biome/configuration_schema.json"
+  "$schema": "node_modules/.pnpm/@biomejs+biome@2.2.4/node_modules/@biomejs/biome/configuration_schema.json"
 }

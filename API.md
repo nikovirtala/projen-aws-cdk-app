@@ -1650,8 +1650,8 @@ const awsCdkAppOptions: AwsCdkAppOptions = { ... }
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.checkLicenses">checkLicenses</a></code> | <code>projen.javascript.LicenseCheckerOptions</code> | Configure which licenses should be deemed acceptable for use by dependencies. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.clobber">clobber</a></code> | <code>boolean</code> | Add a `clobber` task which resets the repo to origin. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.codeArtifactOptions">codeArtifactOptions</a></code> | <code>projen.javascript.CodeArtifactOptions</code> | Options for npm packages using AWS CodeArtifact. |
-| <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v4 A secret is required for private repos. Configured with `@codeCovTokenSecret`. |
-| <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.codeCovTokenSecret">codeCovTokenSecret</a></code> | <code>string</code> | Define the secret name for a specified https://codecov.io/ token A secret is required to send coverage for private repositories. |
+| <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
+| <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.codeCovTokenSecret">codeCovTokenSecret</a></code> | <code>string</code> | Define the secret name for a specified https://codecov.io/ token. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.constructsVersion">constructsVersion</a></code> | <code>string</code> | Minimum version of the `constructs` library to depend on. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.context">context</a></code> | <code>{[ key: string ]: any}</code> | Additional context to include in `cdk.json`. |
@@ -1704,6 +1704,7 @@ const awsCdkAppOptions: AwsCdkAppOptions = { ... }
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.npmProvenance">npmProvenance</a></code> | <code>boolean</code> | Should provenance statements be generated when the package is published. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
+| <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.npmTrustedPublishing">npmTrustedPublishing</a></code> | <code>boolean</code> | Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.nvm">nvm</a></code> | <code>boolean</code> | Create nvmrc with project Node.js version. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
@@ -1733,6 +1734,7 @@ const awsCdkAppOptions: AwsCdkAppOptions = { ... }
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.releasableCommits">releasableCommits</a></code> | <code>projen.ReleasableCommits</code> | Find commits that should be considered releasable Used to decide if a release is required. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.release">release</a></code> | <code>boolean</code> | Add release management to this project. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.releaseBranches">releaseBranches</a></code> | <code>{[ key: string ]: projen.release.BranchOptions}</code> | Defines additional release branches. |
+| <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.releaseEnvironment">releaseEnvironment</a></code> | <code>string</code> | The GitHub Actions environment used for the release. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.releaseFailureIssue">releaseFailureIssue</a></code> | <code>boolean</code> | Create a github issue on every failed publishing task. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.releaseFailureIssueLabel">releaseFailureIssueLabel</a></code> | <code>string</code> | The label to apply to issues indicating publish failures. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.releaseTagPrefix">releaseTagPrefix</a></code> | <code>string</code> | Automatically add the given prefix to release tags. |
@@ -2258,7 +2260,7 @@ public readonly codeCov: boolean;
 - *Type:* boolean
 - *Default:* false
 
-Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v4 A secret is required for private repos. Configured with `@codeCovTokenSecret`.
+Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
 
 ---
 
@@ -2269,9 +2271,9 @@ public readonly codeCovTokenSecret: string;
 ```
 
 - *Type:* string
-- *Default:* if this option is not specified, only public repositories are supported
+- *Default:* OIDC auth is used
 
-Define the secret name for a specified https://codecov.io/ token A secret is required to send coverage for private repositories.
+Define the secret name for a specified https://codecov.io/ token.
 
 ---
 
@@ -3030,6 +3032,19 @@ GitHub secret which contains the NPM token to use when publishing packages.
 
 ---
 
+##### `npmTrustedPublishing`<sup>Optional</sup> <a name="npmTrustedPublishing" id="@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.npmTrustedPublishing"></a>
+
+```typescript
+public readonly npmTrustedPublishing: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work.
+
+---
+
 ##### `nvm`<sup>Optional</sup> <a name="nvm" id="@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.nvm"></a>
 
 ```typescript
@@ -3431,6 +3446,25 @@ Each release branch _must_ be assigned a major version number which is used
 to enforce that versions published from that branch always use that major
 version. If multiple branches are used, the `majorVersion` field must also
 be provided for the default branch.
+
+---
+
+##### `releaseEnvironment`<sup>Optional</sup> <a name="releaseEnvironment" id="@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.releaseEnvironment"></a>
+
+```typescript
+public readonly releaseEnvironment: string;
+```
+
+- *Type:* string
+- *Default:* no environment used, unless set at the artifact level
+
+The GitHub Actions environment used for the release.
+
+This can be used to add an explicit approval step to the release
+or limit who can initiate a release through environment protection rules.
+
+When multiple artifacts are released, the environment can be overwritten
+on a per artifact basis.
 
 ---
 

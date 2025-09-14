@@ -376,13 +376,13 @@ export interface AwsCdkAppOptions {
      */
     readonly copyrightOwner?: string;
     /**
-     * Define the secret name for a specified https://codecov.io/ token A secret is required to send coverage for private repositories.
-     * @default - if this option is not specified, only public repositories are supported
+     * Define the secret name for a specified https://codecov.io/ token.
+     * @default - OIDC auth is used
      * @stability experimental
      */
     readonly codeCovTokenSecret?: string;
     /**
-     * Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v4 A secret is required for private repos. Configured with `@codeCovTokenSecret`.
+     * Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
      * @default false
      * @stability experimental
      */
@@ -503,6 +503,17 @@ export interface AwsCdkAppOptions {
      * @stability experimental
      */
     readonly releaseFailureIssue?: boolean;
+    /**
+     * The GitHub Actions environment used for the release.
+     * This can be used to add an explicit approval step to the release
+     * or limit who can initiate a release through environment protection rules.
+     *
+     * When multiple artifacts are released, the environment can be overwritten
+     * on a per artifact basis.
+     * @default - no environment used, unless set at the artifact level
+     * @stability experimental
+     */
+    readonly releaseEnvironment?: string;
     /**
    * Defines additional release branches.
    * A workflow will be created for each
@@ -682,6 +693,12 @@ export interface AwsCdkAppOptions {
      * @stability experimental
      */
     readonly packageManager?: javascript.NodePackageManager;
+    /**
+     * Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work.
+     * @default - false
+     * @stability experimental
+     */
+    readonly npmTrustedPublishing?: boolean;
     /**
      * GitHub secret which contains the NPM token to use when publishing packages.
      * @default "NPM_TOKEN"
