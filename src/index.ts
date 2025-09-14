@@ -52,6 +52,7 @@ export class AwsCdkApp extends awscdk.AwsCdkTypeScriptApp {
                 lib: ["esnext"],
                 module: "nodenext",
                 moduleResolution: javascript.TypeScriptModuleResolution.NODE_NEXT,
+                noEmit: true,
                 noEmitOnError: false,
                 noFallthroughCasesInSwitch: true,
                 noImplicitAny: true,
