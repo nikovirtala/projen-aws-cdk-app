@@ -1673,7 +1673,7 @@ const awsCdkAppOptions: AwsCdkAppOptions = { ... }
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.entrypoint">entrypoint</a></code> | <code>string</code> | Module entrypoint (`main` in `package.json`). Set to an empty string to not include `main` in your package.json. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.entrypointTypes">entrypointTypes</a></code> | <code>string</code> | The .d.ts file that includes the type declarations for this module. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.experimentalIntegRunner">experimentalIntegRunner</a></code> | <code>boolean</code> | Enable experimental support for the AWS CDK integ-runner. |
-| <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.featureFlags">featureFlags</a></code> | <code>boolean</code> | Include all feature flags in cdk.json. |
+| <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.featureFlags">featureFlags</a></code> | <code>projen.awscdk.ICdkFeatureFlags</code> | Feature flags that should be enabled in `cdk.json`. Make sure to double-check any changes to feature flags in `cdk.json` before deploying. Unexpected changes may cause breaking changes in your CDK app. You can overwrite any feature flag by passing it into the context field. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.github">github</a></code> | <code>boolean</code> | Enable GitHub integration. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.githubOptions">githubOptions</a></code> | <code>projen.github.GitHubOptions</code> | Options for GitHub integration. |
 | <code><a href="#@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.gitignore">gitignore</a></code> | <code>string[]</code> | Additional entries to .gitignore. |
@@ -2578,13 +2578,13 @@ Enable experimental support for the AWS CDK integ-runner.
 ##### `featureFlags`<sup>Optional</sup> <a name="featureFlags" id="@nikovirtala/projen-aws-cdk-app.AwsCdkAppOptions.property.featureFlags"></a>
 
 ```typescript
-public readonly featureFlags: boolean;
+public readonly featureFlags: ICdkFeatureFlags;
 ```
 
-- *Type:* boolean
-- *Default:* true
+- *Type:* projen.awscdk.ICdkFeatureFlags
+- *Default:* no feature flags are enabled by default
 
-Include all feature flags in cdk.json.
+Feature flags that should be enabled in `cdk.json`. Make sure to double-check any changes to feature flags in `cdk.json` before deploying. Unexpected changes may cause breaking changes in your CDK app. You can overwrite any feature flag by passing it into the context field.
 
 ---
 
@@ -3902,7 +3902,7 @@ public readonly workflowGitIdentity: GitIdentity;
 ```
 
 - *Type:* projen.github.GitIdentity
-- *Default:* GitHub Actions
+- *Default:* default GitHub Actions user
 
 The git identity to use in workflows.
 

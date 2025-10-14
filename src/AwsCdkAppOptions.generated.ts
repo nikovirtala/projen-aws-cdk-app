@@ -126,11 +126,14 @@ export interface AwsCdkAppOptions {
      */
     readonly requireApproval?: awscdk.ApprovalLevel;
     /**
-     * Include all feature flags in cdk.json.
-     * @default true
+     * Feature flags that should be enabled in `cdk.json`.
+     * Make sure to double-check any changes to feature flags in `cdk.json` before deploying.
+     * Unexpected changes may cause breaking changes in your CDK app.
+     * You can overwrite any feature flag by passing it into the context field.
+     * @default - no feature flags are enabled by default
      * @stability experimental
      */
-    readonly featureFlags?: boolean;
+    readonly featureFlags?: awscdk.ICdkFeatureFlags;
     /**
      * Additional context to include in `cdk.json`.
      * @default - no additional context
@@ -257,7 +260,7 @@ export interface AwsCdkAppOptions {
     readonly workflowNodeVersion?: string;
     /**
      * The git identity to use in workflows.
-     * @default - GitHub Actions
+     * @default - default GitHub Actions user
      * @stability experimental
      */
     readonly workflowGitIdentity?: github.GitIdentity;
