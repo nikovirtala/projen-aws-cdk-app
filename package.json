@@ -37,36 +37,36 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2",
-    "@jsii/spec": "^1.116.0",
-    "@mrgrain/jsii-struct-builder": "^0.7.63",
-    "@nikovirtala/projen-vitest": "2.0.110",
+    "@jsii/spec": "^1.117.0",
+    "@mrgrain/jsii-struct-builder": "^0.7.64",
+    "@nikovirtala/projen-vitest": "2.1.0",
     "@types/node": "^22",
-    "@vitest/coverage-v8": "^3",
-    "aws-cdk-lib": "2.220.0",
+    "@vitest/coverage-v8": "^4",
+    "aws-cdk-lib": "2.221.0",
     "commit-and-tag-version": "^12",
     "constructs": "^10.4.2",
-    "jsii": "~5.8.3",
-    "jsii-diff": "^1.116.0",
+    "jsii": "~5.9.3",
+    "jsii-diff": "^1.117.0",
     "jsii-docgen": "^10.5.0",
-    "jsii-pacmak": "^1.116.0",
-    "jsii-rosetta": "~5.8.3",
-    "projen": "^0.98.0",
+    "jsii-pacmak": "^1.117.0",
+    "jsii-rosetta": "~5.9.3",
+    "projen": "^0.98.4",
     "ts-node": "^10.9.2",
-    "typescript": "5.8.3",
-    "vitest": "^3"
+    "typescript": "5.9.3",
+    "vitest": "^4"
   },
   "peerDependencies": {
-    "@nikovirtala/projen-vitest": "^2.0.110",
-    "aws-cdk-lib": "^2.220.0",
+    "@nikovirtala/projen-vitest": "^2.1.0",
+    "aws-cdk-lib": "^2.221.0",
     "constructs": "^10.4.2",
-    "projen": "^0.98.0"
+    "projen": "^0.98.4"
   },
   "dependencies": {
-    "projen": "^0.98.0"
+    "projen": "^0.98.4"
   },
   "pnpm": {},
   "engines": {
-    "node": ">= 22.16.0"
+    "node": ">= 22.21.0"
   },
   "main": "lib/index.js",
   "license": "MIT",

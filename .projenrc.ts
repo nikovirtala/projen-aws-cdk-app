@@ -4,7 +4,7 @@ import { Vitest } from "@nikovirtala/projen-vitest";
 import { cdk, javascript, TextFile } from "projen";
 import { IndentStyle } from "projen/lib/javascript/biome/biome-config";
 
-const nodeVersion = "22.16.0";
+const nodeVersion = "22.21.0";
 
 const project = new cdk.JsiiProject({
     author: "Niko Virtala",
@@ -40,7 +40,7 @@ const project = new cdk.JsiiProject({
     mergify: true,
     autoMerge: true,
     jest: false,
-    jsiiVersion: "~5.8.3",
+    jsiiVersion: "~5.9.3",
     license: "MIT",
     licensed: true,
     minNodeVersion: nodeVersion,
@@ -54,7 +54,7 @@ const project = new cdk.JsiiProject({
     projenrcTs: true,
     releaseToNpm: true,
     repositoryUrl: "https://github.com/nikovirtala/projen-aws-cdk-app.git",
-    typescriptVersion: "5.8.3",
+    typescriptVersion: "5.9.3",
 });
 
 // TypeScript utility types are **not** allowed in `jsii` applications :´(
@@ -113,7 +113,7 @@ new ProjenStruct(project, {
         },
     );
 
-new Vitest(project, { vitestVersion: "^3" });
+new Vitest(project, { vitestVersion: "^4" });
 
 project.vscode?.extensions.addRecommendations("biomejs.biome");
 
