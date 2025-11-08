@@ -53,6 +53,7 @@ const project = new cdk.JsiiProject({
     prettier: false,
     projenrcTs: true,
     releaseToNpm: true,
+    npmTrustedPublishing: true,
     repositoryUrl: "https://github.com/nikovirtala/projen-aws-cdk-app.git",
     typescriptVersion: "5.9.3",
 });
