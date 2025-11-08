@@ -1,7 +1,7 @@
 import { PrimitiveType } from "@jsii/spec";
 import { ProjenStruct, Struct } from "@mrgrain/jsii-struct-builder";
 import { Vitest } from "@nikovirtala/projen-vitest";
-import { cdk, javascript, TextFile } from "projen";
+import { cdk, JsonPatch, javascript, TextFile } from "projen";
 import { IndentStyle } from "projen/lib/javascript/biome/biome-config";
 
 const nodeVersion = "22.21.0";
@@ -132,5 +132,10 @@ new TextFile(project, "mise.toml", {
     readonly: true,
     lines: ["[tools]", `node = "${nodeVersion}"`],
 });
+
+// use node.js 24.x to get new enough npm to satisfy: trusted publishing requires npm CLI version 11.5.1 or later.
+project.github
+    ?.tryFindWorkflow("release")
+    ?.file?.patch(JsonPatch.replace("/jobs/release_npm/steps/0/with/node-version", "24.x"));
 
 project.synth();
