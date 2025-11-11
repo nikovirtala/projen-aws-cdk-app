@@ -664,7 +664,7 @@ resolution-mode=highest
         "name": "upgrade",
         "steps": [
           {
-            "exec": "pnpm dlx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@nikovirtala/projen-vitest,esbuild,projen,tsx",
+            "exec": "pnpm dlx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@nikovirtala/projen-vitest,esbuild,projen,tsx",
           },
           {
             "exec": "pnpm i --no-frozen-lockfile",
