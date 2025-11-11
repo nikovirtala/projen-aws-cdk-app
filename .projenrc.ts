@@ -4,7 +4,7 @@ import { Vitest } from "@nikovirtala/projen-vitest";
 import { cdk, JsonPatch, javascript, TextFile } from "projen";
 import { IndentStyle } from "projen/lib/javascript/biome/biome-config";
 
-const nodeVersion = "22.21.0";
+const nodeVersion = "22.21.1";
 
 const project = new cdk.JsiiProject({
     author: "Niko Virtala",
