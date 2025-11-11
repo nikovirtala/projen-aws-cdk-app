@@ -193,7 +193,15 @@
     },
     "post-upgrade": {
       "name": "post-upgrade",
-      "description": "Runs after upgrading dependencies"
+      "description": "Runs after upgrading dependencies",
+      "steps": [
+        {
+          "exec": "pnpm dlx npm-check-updates@18 --upgrade --target=minor --peer --dep=dev,peer --filter=@nikovirtala/projen-vitest"
+        },
+        {
+          "exec": "pnpm i --no-frozen-lockfile"
+        }
+      ]
     },
     "pre-compile": {
       "name": "pre-compile",

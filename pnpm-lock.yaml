@@ -22,7 +22,7 @@ importers:
         specifier: ^0.7.64
         version: 0.7.64(projen@0.98.10(constructs@10.4.3))
       '@nikovirtala/projen-vitest':
-        specifier: 2.1.4
+        specifier: ^2.1.4
         version: 2.1.4(constructs@10.4.3)(projen@0.98.10(constructs@10.4.3))
       '@types/node':
         specifier: ^22

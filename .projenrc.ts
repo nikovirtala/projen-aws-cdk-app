@@ -116,6 +116,12 @@ new ProjenStruct(project, {
 
 new Vitest(project, { vitestVersion: "^4" });
 
+// @nikovirtala/projen-vitest is both dev and peer dependency which ncu doesn't update on a single run
+project.upgradeWorkflow?.postUpgradeTask.exec(
+    "pnpm dlx npm-check-updates@18 --upgrade --target=minor --peer --dep=dev,peer --filter=@nikovirtala/projen-vitest",
+);
+project.upgradeWorkflow?.postUpgradeTask.exec("pnpm i --no-frozen-lockfile");
+
 project.vscode?.extensions.addRecommendations("biomejs.biome");
 
 project.vscode?.settings.addSettings({
