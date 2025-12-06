@@ -1,20 +1,10 @@
-# Product Overview
+# Product
 
-This is a projen template for creating modern AWS CDK TypeScript applications. It extends the standard projen `AwsCdkTypeScriptApp` template with key improvements:
+This is a projen template for creating modern AWS CDK TypeScript applications. It extends projen's standard `AwsCdkTypeScriptApp` with key improvements:
 
-- **ES Modules (ESM)** instead of CommonJS
-- **tsx execution** instead of ts-node for better performance
-- **Vitest** instead of Jest for testing
-- **Biome** for formatting and linting (no ESLint/Prettier)
+- Uses `tsx` instead of `ts-node` for faster execution
+- ES Modules (ESM) instead of CommonJS
+- Vitest instead of Jest for testing
+- Biome for linting and formatting (no ESLint/Prettier)
 
-The template generates a reusable projen construct that developers can use to bootstrap new AWS CDK projects with modern tooling and best practices built-in.
-
-## Key Features
-
-- Modern JavaScript/TypeScript tooling
-- AWS CDK v2 support
-- Automated dependency management
-- Built-in testing with Vitest
-- Code formatting with Biome
-- JSII compatibility for multi-language support
-- PNPM package management
+The template is published as `@nikovirtala/projen-aws-cdk-app` and allows users to scaffold new CDK projects with these modern conventions pre-configured.

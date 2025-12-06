@@ -1,77 +1,73 @@
-# Technology Stack
+# Tech Stack
 
-## Build System & Package Management
+## ⚠️ Projen-Managed Project
 
-- **Projen**: Project configuration and build orchestration
-- **PNPM**: Package manager (version 10)
-- **JSII**: Multi-language library compilation
-- **TypeScript**: 5.8.3
+This project is **entirely managed by projen**. Key implications:
 
-## Runtime & Execution
+- **DO NOT** manually edit generated files (package.json, tsconfig.json, etc.)
+- **ALL** configuration changes must be made in `.projenrc.ts`
+- After modifying `.projenrc.ts`, run `npx projen` to regenerate files
+- Dependencies, scripts, and tooling are defined in `.projenrc.ts`, not package.json
 
-- **Node.js**: >= 22.16.0 (specified in mise.toml)
+## Core Technologies
+
+- **Language**: TypeScript 5.9.3
+- **Node.js**: >= 22.21.1
+- **Package Manager**: pnpm 10
+- **Build System**: projen
+- **Module System**: ES Modules (ESM)
+
+## Key Dependencies
+
+- **AWS CDK**: 2.223.0+
+- **projen**: ^0.98.10 - Project configuration and build orchestration
 - **tsx**: TypeScript execution (replaces ts-node)
-- **ES Modules**: Modern module system
+- **jsii**: ~5.9.3 - JavaScript interop for multi-language support
 
 ## Testing & Quality
 
-- **Vitest**: Test runner with coverage (v3)
-- **Biome**: Formatting and linting
-- **TypeScript strict mode**: Enabled
-
-## AWS CDK
-
-- **aws-cdk-lib**: 2.207.0+
-- **constructs**: ^10.4.2
+- **Test Framework**: Vitest 4.x (not Jest)
+- **Coverage**: @vitest/coverage-v8
+- **Linter/Formatter**: Biome (not ESLint/Prettier)
+  - 4 space indentation
+  - 120 character line width
+  - Organize imports on save
 
 ## Common Commands
 
-### Development
+All commands are run through projen:
 
 ```bash
-# Install dependencies
-pnpm install
-
 # Build the project
-pj build
+npx projen build
 
 # Run tests
-pj test
+npx projen test
 
 # Run tests in watch mode
-pj test:watch
+npx projen test:watch
 
 # Update test snapshots
-pj test:update
-```
+npx projen test:update
 
-### Code Quality
-
-```bash
 # Format and lint code
-pj biome
+npx projen biome
 
 # Compile TypeScript
-pj compile
-```
+npx projen compile
 
-### Projen Management
-
-```bash
-# Regenerate project files
-pj
+# Run default task (synth projen config)
+npx projen default
 
 # Upgrade dependencies
-pj upgrade
+npx projen upgrade
 
 # Package for distribution
-pj package
+npx projen package
 ```
 
-## Code Style Rules
+## Development Setup
 
-- **Indentation**: 4 spaces
-- **Line width**: 120 characters
-- **Quote style**: Double quotes
-- **Module resolution**: NodeNext
-- **Strict TypeScript**: All strict options enabled
+- Uses `mise.toml` for Node.js version management (optional `.nvmrc`)
+- VSCode settings configured for Biome integration
+- Auto-format on save enabled
